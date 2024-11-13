@@ -20,7 +20,7 @@ jobs:
         id: check_pr_labels
         uses: shioyang/check-pr-labels-on-push-action@v1.0.12
         with:
-          # github-token: ${{ inputs.token }}
+          github-token: ${{ secrets.token }}
           labels: ${{ inputs.label }}
 
       - name: See result
