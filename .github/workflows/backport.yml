@@ -6,6 +6,7 @@ on:
 jobs:
   backport:
     strategy:
+      fail-fast: true
       matrix:
         branch: ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5']
     uses: ./.github/workflows/backport-workflow.yml
@@ -16,6 +17,7 @@ jobs:
   # TODO COMBINE
   backport2:
     strategy:
+      fail-fast: true
       matrix:
         branch: ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5']
     uses: ./.github/workflows/backport-workflow.yml
