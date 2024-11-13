@@ -6,7 +6,7 @@ on:
 jobs:
   forwardport:
     # TODO RENAME
-    uses: ./.github/actions/backport/action.yml@main
+    uses: .github/actions/backport/action.yml@main
     with:
       label: '["forwardport to snapshot"]'
       target-branch: main
