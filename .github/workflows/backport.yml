@@ -8,22 +8,18 @@ jobs:
     strategy:
       matrix:
         branch: ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5']
-    runs-on: ubuntu-latest
-    steps:
-        # TODO USE REMOTE DIRECTLY
-      - name: checkout
-        uses: actions/checkout@v4
-
-      - name: Backport to all maintenance branches
-        uses: ./.github/actions/backport
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          label: '["backport to all versions"]'
-          target-branch: v/${{ matrix.branch }}
-
-      - name: Backport to specified branch
-        uses: ./.github/actions/backport
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          label: '["backport to ${{ matrix.branch }}"]'
-          target-branch: v/${{ matrix.branch }}'
+    uses: ./.github/actions/backport/action.yml
+    with:
+      label: '["backport to all versions"]'
+      target-branch: v/${{ matrix.branch }}
+    secrets: inherit
+  # TODO COMBINE
+  backport2:
+    strategy:
+      matrix:
+        branch: ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5']
+    uses: ./.github/actions/backport/action.yml
+    with:
+      label: '["backport to ${{ matrix.branch }}"]'
+      target-branch: v/${{ matrix.branch }}'
+    secrets: inherit

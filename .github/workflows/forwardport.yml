@@ -5,14 +5,9 @@ on:
       - v/*
 jobs:
   forwardport:
-    runs-on: ubuntu-latest
-    steps:
-      # TODO USE REMOTE DIRECTLY
-    - name: checkout
-      uses: actions/checkout@v4
-
-    - uses: ./.github/actions/backport
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        label: '["forwardport to snapshot"]'
-        target-branch: main
+    # TODO RENAME
+    uses: ./.github/actions/backport/action.yml
+    with:
+      label: '["forwardport to snapshot"]'
+      target-branch: main
+    secrets: inherit
