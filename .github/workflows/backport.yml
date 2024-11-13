@@ -4,22 +4,30 @@ on:
   branches:
    - main
 jobs:
-  backport:
+  branches:
+    runs-on: ubuntu-latest
+    outputs:
+      branches: "['5.0', '5.1', '5.2', '5.3', '5.4', '5.5']"
+    steps:
+      - run: exit 0
+
+  backport-all:
+    needs: branches
     strategy:
       fail-fast: true
       matrix:
-        branch: ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5']
+        branch: ${{ fromJSON(needs.branches.outputs.branches) }}
     uses: ./.github/workflows/backport-workflow.yml
     with:
       label: '["backport to all versions"]'
       target-branch: v/${{ matrix.branch }}
     secrets: inherit
-  # TODO COMBINE
-  backport2:
+  backport-specified:
+    needs: branches
     strategy:
       fail-fast: true
       matrix:
-        branch: ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5']
+        branch: ${{ fromJSON(needs.branches.outputs.branches) }}
     uses: ./.github/workflows/backport-workflow.yml
     with:
       label: '["backport to ${{ matrix.branch }}"]'
