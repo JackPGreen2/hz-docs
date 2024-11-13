@@ -15,14 +15,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Backport to all maintenance branches
-        uses: ./.github/workflows/backport-workflow.yml
+        uses: ./.github/actions/backport
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           label: '["backport to all versions"]'
           target-branch: v/${{ matrix.branch }}
 
       - name: Backport to specified branch
-        uses: ./.github/workflows/backport-workflow.yml
+        uses: ./.github/actions/backport
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           label: '["backport to ${{ matrix.branch }}"]'

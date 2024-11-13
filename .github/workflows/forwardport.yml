@@ -11,7 +11,7 @@ jobs:
     - name: checkout
       uses: actions/checkout@v4
 
-    - uses: ./.github/workflows/backport-workflow.yml
+    - uses: ./.github/actions/backport
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         label: '["forwardport to snapshot"]'
