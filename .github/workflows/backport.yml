@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         branch: ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5']
-    uses: ./.github/actions/backport/action.yml
+    uses: ./.github/actions/backport/action.yml@main
     with:
       label: '["backport to all versions"]'
       target-branch: v/${{ matrix.branch }}
@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         branch: ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5']
-    uses: ./.github/actions/backport/action.yml
+    uses: ./.github/actions/backport/action.yml@main
     with:
       label: '["backport to ${{ matrix.branch }}"]'
       target-branch: v/${{ matrix.branch }}'
