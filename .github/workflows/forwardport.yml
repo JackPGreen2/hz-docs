@@ -5,7 +5,7 @@ on:
       - v/*
 jobs:
   forwardport:
-    uses: ./.github/workflows/backport-workflow.yml@main
+    uses: ./.github/workflows/backport-workflow.yml
     with:
       label: '["forwardport to snapshot"]'
       target-branch: main
