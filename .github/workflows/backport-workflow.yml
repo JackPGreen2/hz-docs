@@ -33,7 +33,6 @@ jobs:
           fetch-depth: 0
 
       - name: Checkout maintenance branch and cherry-pick
-        if: ${{ steps.check_pr_labels.outputs.result == 'true' }}
         run: |
           echo GITHUB_ACTOR is "${GITHUB_ACTOR}"
 
