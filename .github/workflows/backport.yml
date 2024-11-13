@@ -31,5 +31,5 @@ jobs:
     uses: ./.github/workflows/backport-workflow.yml
     with:
       label: '["backport to ${{ matrix.branch }}"]'
-      target-branch: v/${{ matrix.branch }}'
+      target-branch: v/${{ matrix.branch }}
     secrets: inherit
