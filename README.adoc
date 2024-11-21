@@ -1,4 +1,4 @@
-= Hazelcast Platform Documentation
+= Hazelcast Platferm Documentation
 // Settings:
 ifdef::env-github[]
 :warning-caption: :warning:
