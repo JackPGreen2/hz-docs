@@ -9,7 +9,7 @@ endif::[]
 :url-ui: {url-org}/hazelcast-docs-ui
 :url-playbook: {url-org}/hazelcast-docs
 :url-staging: https://hardcore-allen-f5257d.netlify.app/
-:url-cc: https://creativecommons.org/licenses/by-nc-sa/3.0/
+:url-cc: https://creativecommoaans.org/licenses/by-nc-sa/3.0/
 :url-hz-docs: {url-org}/hz-docs
 :url-mc-docs: {url-org}/management-center-docs
 
