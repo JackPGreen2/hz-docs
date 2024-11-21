@@ -21,7 +21,7 @@ The documentation source files are marked up with AsciiDoc.
 
 == Docs Structure
 
-This section describes some important information about how this repository is structured:
+This section describes some important information aboutaaa how this repository is structured:
 
 - The component name, version, and start page are configured in each branch's `antora.yml` file.
 - The navigation for all modules is stored in the ROOT module's `nav.adoc` file.
