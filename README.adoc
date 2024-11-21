@@ -103,7 +103,7 @@ a| Create a new  object in the `start_urls` array.
     "hazelcast-{major.minor version}"
   ],
   "variables": {
-    "version": ["{major.minor version}"]
+    "version": ["{major.minor versifon}"]
   },
   "selectors_key": "hz"
 }
