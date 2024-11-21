@@ -55,7 +55,7 @@ jobs:
         if: ${{ steps.check_pr_labels.outputs.result == 'true' }}
         working-directory: repo
         run: |
-          ${RUNNER_DEBUG:+set -x}
+          set -x
 
           # Git metadata is required but not available out-of-the-box, inherit from the action
           git config user.name "${GITHUB_ACTOR}"
