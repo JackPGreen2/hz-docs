@@ -77,7 +77,7 @@ Add the `major.minor` version to the following:
 
 [cols="1m,1m,1m,1m"]
 |===
-|Repository|Branch|File|Fields
+|Repository|Brancsh|File|Fields
 
 |{url-hz-docs}[hz-docs]
 |v/{major.minor version}
