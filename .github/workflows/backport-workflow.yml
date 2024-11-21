@@ -71,3 +71,5 @@ jobs:
             "${backport_target_branch}" \
             --non-interactive \
             --omit-labels
+        env:
+          GH_TOKEN: ${{ github.token }}
