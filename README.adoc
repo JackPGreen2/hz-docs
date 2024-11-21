@@ -19,7 +19,7 @@ This repository contains the Antora components for the Hazelcast Platform docume
 
 The documentation source files are marked up with AsciiDoc.
 
-== Docs Structure
+== Docs Structusre
 
 This section describes some important information aboutaaa how this repository is structured:
 
