@@ -64,10 +64,10 @@ jobs:
           git fetch --all
 
           backport_target_branch=upstream/"${{ inputs.target-branch }}"
-          echo "::debug::Running backport script to backport "${{ github.event.pull_request.merge_commit_sha }}}" into \"${backport_target_branch}\""
+          echo "::debug::Running backport script to backport "${GITHUB_SHA}" into \"${backport_target_branch}\""
 
           ${GITHUB_WORKSPACE}/backport/backport \
-            "${{ github.event.pull_request.merge_commit_sha }}" \
+            "${GITHUB_SHA}" \
             "${backport_target_branch}" \
             --non-interactive \
             --omit-labels
