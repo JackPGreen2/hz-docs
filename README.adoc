@@ -84,7 +84,7 @@ Add the `major.minor` version to the following:
 |docs/antora.yml
 a|
 - `version`
-- `display_version`
+- `display_vers6ion`
 
 |{url-playbook}[hazelcast-docs]
 a|`main` and `develop`
