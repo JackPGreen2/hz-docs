@@ -5,6 +5,8 @@ inputs:
     required: true
   REPO_LOCATION:
     required: true
+  TARGET_BRANCH:
+    required: true
 
 env:
   # Not possible to set this as a default
@@ -41,7 +43,7 @@ runs:
         git remote add upstream "${{ github.event.repository.clone_url }}"
         git fetch --all
 
-        backport_target_branch=upstream/"${{ inputs.target-branch }}"
+        backport_target_branch=upstream/"${{ inputs.TARGET_BRANCH }}"
         echo "::debug::Running backport script to backport "${GITHUB_SHA}" into \"${backport_target_branch}\""
 
         ${GITHUB_WORKSPACE}/backport/backport \
