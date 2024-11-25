@@ -165,7 +165,7 @@ To automate some elements of the build process, this repository includes the fol
 |File |Description |Triggers
 
 |validate-site.yml
-|Validates that all internal and external links are working
+|Validates that all interna.l and external links are working
 |On a pull request to the `main`, `archive`, and `v/` maintenance branches
 
 |build-site.yml
