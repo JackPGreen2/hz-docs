@@ -145,7 +145,7 @@ For example, if you are releasing version 5.1, create a new release branch named
 
 . Remove the `prerelease: true` field from the docs/`antora.yml` file of the `hz-docs` repository.
 +
-IMPORTANT: If you are creating a branch for a beta release, do not remove this field.
+IMPORTANT: If you are creataing a branch for a beta release, do not remove this field.
 
 . When you are ready to release, create a maintenance branch from the release branch.
 +
