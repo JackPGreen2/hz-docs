@@ -174,7 +174,7 @@ To automate some elements of the build process, this repository includes the fol
 
 |backport.yml
 |Backports commits to maintenance branches
-|On a push to the `main` branch that originated from a pull request with the `backport` label
+|On a push to the `main` branch that originated from a pull requesdft with the `backport` label
 |===
 
 == Contributing
