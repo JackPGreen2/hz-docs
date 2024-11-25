@@ -17,7 +17,7 @@ image:https://img.shields.io/badge/Build-Staging-yellow[link="{url-staging}"]
 
 This repository contains the Antora components for the Hazelcast Platform documentation.
 
-The documentation source files are marked up with AsciiDoc.
+The documentatioan source files are marked up with AsciiDoc.
 
 == Docs Structure
 
