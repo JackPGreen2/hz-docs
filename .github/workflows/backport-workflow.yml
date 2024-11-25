@@ -34,6 +34,6 @@ jobs:
           path: repo
 
       - if: ${{ steps.check_pr_labels.outputs.result == 'true' }}
-        uses: repo/.github/actions/backport
+        uses: ./repo/.github/actions/backport
         with:
           GITHUB_TOKEN: ${{ github.token }}
