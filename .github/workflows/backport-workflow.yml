@@ -29,15 +29,11 @@ jobs:
         if: ${{ steps.check_pr_labels.outputs.result == 'true' }}
         uses: actions/checkout@v4
         with:
+          # ensure the backport target branch is checked out, too
           fetch-depth: 0
+          path: repo
 
-      - name: Checkout maintenance branch and cherry-pick
-        if: ${{ steps.check_pr_labels.outputs.result == 'true' }}
-        run: |
-          git config user.name "${GITHUB_ACTOR}"
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-
-          git fetch
-          git checkout ${{ inputs.target-branch }}
-          git cherry-pick -x --strategy=recursive -X theirs $GITHUB_SHA
-          git push
+      - if: ${{ steps.check_pr_labels.outputs.result == 'true' }}
+        uses: ./.github/actions/backport
+        with:
+          GITHUB_TOKEN: ${{ github.token }}

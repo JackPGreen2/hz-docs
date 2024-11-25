@@ -1,0 +1,52 @@
+name: Backport
+
+inputs:
+  GITHUB_TOKEN:
+    required: true
+
+env:
+  # Not possible to set this as a default
+  # https://github.com/orgs/community/discussions/46670
+  shell: bash
+
+runs:
+  using: composite
+  steps:
+    - name: Print Debugging Information
+      # if: runner.debug == '1'
+      shell: ${{ env.shell }}
+      run: |
+        printenv
+        echo "$GITHUB_CONTEXT"
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+
+    - name: Checkout Backport tool
+      shell: ${{ env.shell }}
+      uses: actions/checkout@v4
+      with:
+        repository: hazelcast/backport
+        path: backport
+
+    - name: Checkout maintenance branch and cherry-pick
+      shell: ${{ env.shell }}
+      working-directory: repo
+      run: |
+        # Git metadata is required but not available out-of-the-box, inherit from the action
+        git config user.name "${GITHUB_ACTOR}"
+        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+        # Add "upstream" remote as checkout action doesn't include by default
+        git remote add upstream "${{ github.event.repository.clone_url }}"
+        git fetch --all
+
+        backport_target_branch=upstream/"${{ inputs.target-branch }}"
+        echo "::debug::Running backport script to backport "${GITHUB_SHA}" into \"${backport_target_branch}\""
+
+        ${GITHUB_WORKSPACE}/backport/backport \
+          "${GITHUB_SHA}" \
+          "${backport_target_branch}" \
+          --non-interactive \
+          --omit-labels
+      env:
+        GH_TOKEN: ${{ github.token }}
