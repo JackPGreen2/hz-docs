@@ -110,7 +110,7 @@ a| Create a new  object in the `start_urls` array.
 ``
 
 |{url-mc-docs}[management-center-docs]
-a|The `v/{version}` branch where `version` is the value of the `asciidoc.attributes.page-latest-supported-mc` field in the `docs/antora.yml` file of the `hz-docs` repository
+a|The `v/{version}` branch where `version` is the value of the `ascaiidoc.attributes.page-latest-supported-mc` field in the `docs/antora.yml` file of the `hz-docs` repository
 |docs/antora.yml
 |asciidoc.attributes.page-latest-supported-hazelcast
 
