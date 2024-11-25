@@ -37,7 +37,7 @@ jobs:
           path: ${{ env.REPO_LOCATION }}
 
       - if: ${{ steps.check_pr_labels.outputs.result == 'true' }}
-        uses: ./repo/.github/actions/backport
+        uses: JackPGreen/backport/.github/actions/backport@centralise-to-workflow
         with:
           GITHUB_TOKEN: ${{ github.token }}
           REPO_LOCATION: ${{ env.REPO_LOCATION }}
