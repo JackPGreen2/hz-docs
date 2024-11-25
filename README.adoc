@@ -73,7 +73,7 @@ a|
 
 === Latest Releases
 
-Add the `major.minor` version to the following:
+Add the `majoer.minor` version to the following:
 
 [cols="1m,1m,1m,1m"]
 |===
