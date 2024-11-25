@@ -3,6 +3,8 @@ name: Backport
 inputs:
   GITHUB_TOKEN:
     required: true
+  REPO_LOCATION:
+    required: true
 
 env:
   # Not possible to set this as a default
@@ -22,7 +24,6 @@ runs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
 
     - name: Checkout Backport tool
-      shell: ${{ env.shell }}
       uses: actions/checkout@v4
       with:
         repository: hazelcast/backport
@@ -30,7 +31,7 @@ runs:
 
     - name: Checkout maintenance branch and cherry-pick
       shell: ${{ env.shell }}
-      working-directory: repo
+      working-directory: ${{ inputs.REPO_LOCATION }}
       run: |
         # Git metadata is required but not available out-of-the-box, inherit from the action
         git config user.name "${GITHUB_ACTOR}"

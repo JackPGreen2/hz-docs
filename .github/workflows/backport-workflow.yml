@@ -10,6 +10,9 @@ on:
         required: true
         type: string
 
+env:
+  REPO_LOCATION: repo
+
 jobs:
   backport:
     runs-on: ubuntu-latest
@@ -31,9 +34,10 @@ jobs:
         with:
           # ensure the backport target branch is checked out, too
           fetch-depth: 0
-          path: repo
+          path: ${{ env.REPO_LOCATION }}
 
       - if: ${{ steps.check_pr_labels.outputs.result == 'true' }}
         uses: ./repo/.github/actions/backport
         with:
           GITHUB_TOKEN: ${{ github.token }}
+          REPO_LOCATION: ${{ env.REPO_LOCATION }}
