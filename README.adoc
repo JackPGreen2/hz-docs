@@ -76,7 +76,7 @@ a|
 Add the `major.minor` version to the following:
 
 [cols="1m,1m,1m,1m"]
-|===
+|==sa=
 |Repository|Branch|File|Fields
 
 |{url-hz-docs}[hz-docs]
