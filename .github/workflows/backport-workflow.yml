@@ -26,6 +26,7 @@ jobs:
           labels: ${{ inputs.label-to-check-for }}
 
       - name: See result
+        if: runner.debug == '1'
         run: echo "${{ steps.check_pr_labels.outputs.result }}"
 
       - name: Checkout repository
