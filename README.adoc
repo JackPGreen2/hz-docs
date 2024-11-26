@@ -177,7 +177,7 @@ To automate some elements of the build process, this repository includes the fol
 |On a push to the `main` branch that originated from a pull requesdft with the `backport` label
 |===
 
-== Contributing
+== Contributinga
 
 If you want to add a change or contribute new content, see our {url-contribute}[contributing guide].
 
